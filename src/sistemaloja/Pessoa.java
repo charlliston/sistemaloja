@@ -2,7 +2,7 @@ package sistemaloja;
 
 import java.util.Date;
 
-public interface Pessoa {
+public class Pessoa {
 
     private String nome;
     private String rg;
