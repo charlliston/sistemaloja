@@ -10,59 +10,59 @@ public class Endereco {
     private String estado;
     private int numero;
 
-    public void set_Rua(String rua) {
+    public void setRua(String rua) {
         this.rua = rua;
     }
 
-    public String get_Rua() {
+    public String getRua() {
         return (this.rua);
     }
 
-    public void set_Bairro(String bairro) {
+    public void setBairro(String bairro) {
         this.bairro = bairro;
     }
 
-    public String get_Bairro() {
+    public String getBairro() {
         return (this.bairro);
     }
 
-    public void set_Complemento(String complemento) {
+    public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
 
-    public String get_Complemento() {
+    public String getComplemento() {
         return (this.complemento);
     }
 
-    public void set_Numero(int numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
-    public int get_Numero() {
+    public int getNumero() {
         return (this.numero);
     }
 
-    public void set_CEP(String cep) {
+    public void setCEP(String cep) {
         this.cep = cep;
     }
 
-    public String get_CEP() {
+    public String getCEP() {
         return (this.cep);
     }
 
-    public void set_Cidade(String cidade) {
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
 
-    public String get_Cidade() {
+    public String getCidade() {
         return (this.cidade);
     }
 
-    public void set_Estado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public String get_Estado() {
+    public String getEstado() {
         return (this.estado);
     }
 }
