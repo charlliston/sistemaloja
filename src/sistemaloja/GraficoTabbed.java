@@ -6,6 +6,9 @@
 package sistemaloja;
 
 import java.awt.Component;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
@@ -1235,6 +1238,8 @@ public class GraficoTabbed extends javax.swing.JFrame {
                 new GraficoTabbed().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1361,4 +1366,30 @@ public class GraficoTabbed extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField telFornecedor;
     private javax.swing.JFormattedTextField telFuncionario;
     // End of variables declaration//GEN-END:variables
+    
+    
+    String codigoFun = codFuncionario.getText();
+    String cargoFunc = cargoFuncionario.getText();
+    double salarioFunc = Double.parseDouble(salFuncionario.getText());
+    String nomeFunc = nomeFuncionario.getText();
+    String sexoFunc= (String) sexoFuncionario.getSelectedItem();
+    String estadoCivilFunc = (String) civilFuncionario.getSelectedItem();
+    String nascFunc = nascFuncionario.getText();
+    String cpfFunc = cpfFuncionario.getText();
+    String rgFunc = rgFuncionario.getText();
+    String rgUfFunc = (String) rgufFuncionario.getSelectedItem();
+    String ruaFunc = endFuncionario.getText();
+    String numFunc = numFuncionario.getText();
+    String complementoFunc = compFuncionario.getText();
+    String cidadeFunc = cidFuncionario.getText();
+    String estadoFunc = (String) estadoFuncionario.getSelectedItem();
+    String bairroFunc = bairroFuncionario.getText();
+    String cepFunc = cepFuncionario.getText();
+    String telefoneFunc = telFuncionario.getText();
+    String emailFunc = emailFuncionario.getText();
+
+    
+    Endereco enderecoFunc = new Endereco(ruaFunc, bairroFunc, complementoFunc, cidadeFunc, estadoFunc, numFunc); 
+    Funcionarios Func = new Funcionarios(codigoFun, cargoFunc, salarioFunc, rgFunc, cpfFunc, enderecoFunc, 
+    		telefoneFunc, sexoFunc, estadoCivilFunc, nascFunc,emailFunc 		);
 }
