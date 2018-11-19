@@ -37,13 +37,6 @@ public class Funcionarios extends PessoaFisica {
     	return salario;
     }
     
-    public void setCargaHoraria(int cargaHoraria) {
-    	this.cargaHoraria = cargaHoraria;
-    }
-    
-    public int getCargaHoraria() {
-    	return cargaHoraria;
-    }
     
     public String getDataAdm() {
     	return dataAdm;
