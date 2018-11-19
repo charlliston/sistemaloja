@@ -20,15 +20,7 @@ public class PessoaJuridica implements LojaI {
         return (this.cnpj);
     }
 
-    @Override
-    public void comprar() {
-        
-    }
-    
-    @Override
-    public void vender() {
-        
-    }
+
 
     @Override
     public void emitirNF() {

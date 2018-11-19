@@ -18,6 +18,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
     public GraficoTabbed() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -1002,12 +1003,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel46.setText("Saída:");
 
-        saidaEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saidaEstoqueActionPerformed(evt);
-            }
-        });
-
         saveEstoque.setText("Salvar");
 
         cancelarEstoque.setText("Cancelar");
@@ -1185,10 +1180,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
     private void qtdEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdEstoqueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_qtdEstoqueActionPerformed
-
-    private void saidaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saidaEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saidaEstoqueActionPerformed
 
     private void cancelarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEstoqueActionPerformed
         // TODO add your handling code here:

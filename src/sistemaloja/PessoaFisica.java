@@ -106,16 +106,7 @@ public class PessoaFisica implements LojaI {
     public Date getDataDeNascimento() {
         return (this.dataDeNascimento);
     }
-
-    @Override
-    public void comprar() {
-        
-    }
     
-    @Override
-    public void vender() {
-        
-    }
 
     @Override
     public void emitirNF() {
