@@ -42,6 +42,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -128,12 +131,6 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="bairroFuncionario" min="-2" pref="107" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="cadastrarFuncionario" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="cancelFuncionario" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
@@ -177,6 +174,13 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
+                          <Component id="cadastrarFuncionario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="cancelFuncionario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -248,12 +252,12 @@
                               <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="emailFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cadastrarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cancelFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -268,9 +272,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="codFuncionario">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codFuncionarioActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -281,11 +282,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomeFuncionario">
-                  <Events>
-                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nomeFuncionariojLabel2FocusGained"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeFuncionarioActionPerformed"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nomeFuncionariojLabel2KeyPressed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
@@ -307,7 +303,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="salFuncionario">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="R$ "/>
+                    <Property name="toolTipText" type="java.lang.String" value="R$"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
@@ -363,7 +359,8 @@
                 <Component class="javax.swing.JTextField" name="nascFuncionario">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="DD/MM/AAAA"/>
+                    <Property name="toolTipText" type="java.lang.String" value="DD/MM/AAAA"/>
+                    <Property name="actionCommand" type="java.lang.String" value="&lt;N&#xe3;o Definido&gt;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
@@ -377,6 +374,7 @@
                 <Component class="javax.swing.JTextField" name="cpfFuncionario">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="toolTipText" type="java.lang.String" value="XXX.XXX.XXX-XX"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
@@ -477,9 +475,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cidFuncionario">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cidFuncionarioActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -546,6 +541,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cepFuncionario">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="XXXXX-XXX"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
@@ -556,15 +554,23 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="telFuncionario">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="(DDD) XXXXX-XXXX"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="cadastrarFuncionario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cadastrar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarFuncionario"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="cancelFuncionario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cancelar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
@@ -634,12 +640,6 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="bairroFornecedor" min="-2" pref="107" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="cadastrarFornecedor" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="cancelarFornecedor" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
@@ -650,7 +650,7 @@
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="nomeFornecedor" min="-2" pref="241" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="39" max="32767" attributes="0"/>
                                   <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="catFornecedor" min="-2" max="-2" attributes="0"/>
@@ -673,6 +673,13 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="cadastrarFornecedor" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="cancelarFornecedor" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -725,12 +732,12 @@
                               <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="emailFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cadastrarFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cancelarFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -745,9 +752,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cnpjFornecedor">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cnpjFornecedorActionPerformed"/>
-                  </Events>
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="XX.XXX.XXX/0001-ZZ"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel21">
                   <Properties>
@@ -768,11 +775,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomeFornecedor">
-                  <Events>
-                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nomeFornecedorjLabel2FocusGained"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeFornecedorActionPerformed"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nomeFornecedorjLabel2KeyPressed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
@@ -829,9 +831,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cidadeFornecedor">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cidadeFornecedorActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
@@ -922,15 +921,14 @@
                 <Component class="javax.swing.JButton" name="cadastrarFornecedor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cadastrar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="cancelarFornecedor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cancelar"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarFornecedorActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="catFornecedor">
                   <Properties>
@@ -1088,14 +1086,13 @@
                 <Component class="javax.swing.JButton" name="atualizarFuncionario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para atualizar"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atualizarFuncionarioActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="excluirFuncionario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para excluir"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1203,11 +1200,13 @@
                 <Component class="javax.swing.JButton" name="atualizarFornecedor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para atualizar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="excluirFornecedor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para excluir"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1288,7 +1287,7 @@
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
                           <Component id="cadastrarProduto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Component id="cancelProduto" min="-2" max="-2" attributes="0"/>
@@ -1328,12 +1327,12 @@
                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                          <EmptySpace pref="81" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cadastrarProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cancelProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1348,9 +1347,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="codProduto">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codProdutoActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
@@ -1372,7 +1368,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="precoProduto">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="R$ "/>
+                    <Property name="toolTipText" type="java.lang.String" value="R$"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
@@ -1437,6 +1433,7 @@
                         <StringItem index="31" value="31"/>
                       </StringArray>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="dia"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1460,6 +1457,7 @@
                         <StringItem index="11" value="12"/>
                       </StringArray>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="m&#xea;s"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1479,15 +1477,13 @@
                         <StringItem index="7" value="2025"/>
                       </StringArray>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="ano"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JTextField" name="marcaProduto">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="marcaProdutoActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel40">
                   <Properties>
@@ -1498,9 +1494,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="qtdProduto">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qtdProdutoActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">
                   <AuxValues>
@@ -1513,6 +1506,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="toolTipText" type="java.lang.String" value="descri&#xe7;&#xe3;o do produto"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1520,15 +1514,14 @@
                 <Component class="javax.swing.JButton" name="cadastrarProduto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cadastrar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="cancelProduto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="clique para cancelar"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelProdutoActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1569,7 +1562,7 @@
                                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                           <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="nomeEstoque" pref="219" max="32767" attributes="0"/>
+                                          <Component id="nomeEstoque" pref="212" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1624,12 +1617,12 @@
                               <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="saidaEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                          <EmptySpace pref="43" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="saveEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cancelarEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1701,9 +1694,6 @@
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codEstoqueActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomeEstoque">
                   <Properties>
@@ -1730,17 +1720,11 @@
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="marcaEstoqueActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="qtdEstoque">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qtdEstoqueActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel44">
                   <Properties>
@@ -1753,7 +1737,7 @@
                 <Component class="javax.swing.JTextField" name="precoEstoque">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="R$ "/>
+                    <Property name="toolTipText" type="java.lang.String" value="R$"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel45">
@@ -1783,9 +1767,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarEstoqueActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>

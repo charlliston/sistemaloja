@@ -10,11 +10,10 @@ public class Funcionarios extends PessoaFisica {
     String email;
     
     public Funcionarios ( String codigoFun, String cargo, double salario, String rg, String cpf, Endereco endereco, 
-    		String telefone, String sexo, String estadoCivil, String dataDeNascimento, String email    		) {
+    		String telefone, String sexo, String estadoCivil, String dataDeNascimento, String email) {
     	this.codigoFunc = codigoFun;
     	this.cargo = cargo;
     	this.salario = salario;
-
     	this.rg = rg;
     	this.cpf = cpf;
     	this.endereco = endereco;

@@ -6,14 +6,17 @@
 package sistemaloja;
 
 import java.awt.Component;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static java.lang.Math.E;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
 
-public class GraficoTabbed extends javax.swing.JFrame {
+public class GraficoTabbed<E> extends javax.swing.JFrame {
 
     /**
      * Creates new form GraficoTabbed
@@ -153,35 +156,15 @@ public class GraficoTabbed extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane2.setToolTipText("");
+
         jInternalFrame1.setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Código:");
 
-        codFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codFuncionarioActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nome:");
-
-        nomeFuncionario.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nomeFuncionariojLabel2FocusGained(evt);
-            }
-        });
-        nomeFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeFuncionarioActionPerformed(evt);
-            }
-        });
-        nomeFuncionario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                nomeFuncionariojLabel2KeyPressed(evt);
-            }
-        });
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Cargo:");
@@ -189,7 +172,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Salário:");
 
-        salFuncionario.setText("R$ ");
+        salFuncionario.setToolTipText("R$");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Estado Civil:");
@@ -205,12 +188,14 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel4.setText("Data de Nascimento:");
 
         nascFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        nascFuncionario.setText("DD/MM/AAAA");
+        nascFuncionario.setToolTipText("DD/MM/AAAA");
+        nascFuncionario.setActionCommand("<Não Definido>");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("CPF:");
 
         cpfFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cpfFuncionario.setToolTipText("XXX.XXX.XXX-XX");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("RG:");
@@ -234,12 +219,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("Cidade:");
 
-        cidFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cidFuncionarioActionPerformed(evt);
-            }
-        });
-
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("UF:");
 
@@ -251,12 +230,23 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("CEP:");
 
+        cepFuncionario.setToolTipText("XXXXX-XXX");
+
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("Telefone:");
 
+        telFuncionario.setToolTipText("(DDD) XXXXX-XXXX");
+
         cadastrarFuncionario.setText("Cadastrar");
+        cadastrarFuncionario.setToolTipText("clique para cadastrar");
+        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarFuncionario(evt);
+            }
+        });
 
         cancelFuncionario.setText("Cancelar");
+        cancelFuncionario.setToolTipText("clique para cancelar");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setText("E-mail:");
@@ -317,12 +307,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(bairroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(cadastrarFuncionario)
-                                .addGap(48, 48, 48)
-                                .addComponent(cancelFuncionario)))
+                                .addComponent(bairroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(13, 13, 13)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -356,6 +341,12 @@ public class GraficoTabbed extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(salFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(48, 48, 48))
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(cadastrarFuncionario)
+                .addGap(48, 48, 48)
+                .addComponent(cancelFuncionario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,11 +406,11 @@ public class GraficoTabbed extends javax.swing.JFrame {
                     .addComponent(telFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
                     .addComponent(emailFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarFuncionario)
                     .addComponent(cancelFuncionario))
-                .addGap(41, 41, 41))
+                .addGap(18, 18, 18))
         );
 
         jTabbedPane1.addTab("Cadastro de Funcionários", jInternalFrame1);
@@ -429,33 +420,13 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel20.setText("CNPJ:");
 
-        cnpjFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cnpjFornecedorActionPerformed(evt);
-            }
-        });
+        cnpjFornecedor.setToolTipText("XX.XXX.XXX/0001-ZZ");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel21.setText("Empresa:");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel23.setText("Nome:");
-
-        nomeFornecedor.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nomeFornecedorjLabel2FocusGained(evt);
-            }
-        });
-        nomeFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeFornecedorActionPerformed(evt);
-            }
-        });
-        nomeFornecedor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                nomeFornecedorjLabel2KeyPressed(evt);
-            }
-        });
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel25.setText("Categoria de Produto Vendido:");
@@ -475,12 +446,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel33.setText("Cidade:");
 
-        cidadeFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cidadeFornecedorActionPerformed(evt);
-            }
-        });
-
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("UF:");
 
@@ -499,13 +464,10 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel38.setText("Telefone:");
 
         cadastrarFornecedor.setText("Cadastrar");
+        cadastrarFornecedor.setToolTipText("clique para cadastrar");
 
         cancelarFornecedor.setText("Cancelar");
-        cancelarFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarFornecedorActionPerformed(evt);
-            }
-        });
+        cancelarFornecedor.setToolTipText("clique para cancelar");
 
         catFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bebidas", "Enlatados", "Grãos", "Massas" }));
 
@@ -551,12 +513,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel35)
                                 .addGap(18, 18, 18)
-                                .addComponent(bairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(cadastrarFornecedor)
-                                .addGap(48, 48, 48)
-                                .addComponent(cancelarFornecedor)))
+                                .addComponent(bairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(13, 13, 13)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -565,7 +522,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(nomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(catFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -584,6 +541,12 @@ public class GraficoTabbed extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(empresaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48))
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(cadastrarFornecedor)
+                .addGap(48, 48, 48)
+                .addComponent(cancelarFornecedor)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -628,11 +591,11 @@ public class GraficoTabbed extends javax.swing.JFrame {
                     .addComponent(telFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37)
                     .addComponent(emailFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarFornecedor)
                     .addComponent(cancelarFornecedor))
-                .addGap(41, 41, 41))
+                .addGap(17, 17, 17))
         );
 
         jTabbedPane1.addTab("Cadastro de Fornecedores", jInternalFrame2);
@@ -675,13 +638,10 @@ public class GraficoTabbed extends javax.swing.JFrame {
         }
 
         atualizarFuncionario.setText("Atualizar");
-        atualizarFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarFuncionarioActionPerformed(evt);
-            }
-        });
+        atualizarFuncionario.setToolTipText("clique para atualizar");
 
         excluirFuncionario.setText("Excluir");
+        excluirFuncionario.setToolTipText("clique para excluir");
 
         javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
         jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
@@ -747,8 +707,10 @@ public class GraficoTabbed extends javax.swing.JFrame {
         }
 
         atualizarFornecedor.setText("Atualizar");
+        atualizarFornecedor.setToolTipText("clique para atualizar");
 
         excluirFornecedor.setText("Excluir");
+        excluirFornecedor.setToolTipText("clique para excluir");
 
         javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
         jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
@@ -782,19 +744,13 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel22.setText("Código:");
 
-        codProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codProdutoActionPerformed(evt);
-            }
-        });
-
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel24.setText("Nome:");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel28.setText("Preço Unitário:");
 
-        precoProduto.setText("R$ ");
+        precoProduto.setToolTipText("R$");
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel29.setText("Data de Validade:");
@@ -806,38 +762,27 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel39.setText("Descrição:");
 
         diaValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "30", "31" }));
+        diaValidade.setToolTipText("dia");
 
         mesValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        mesValidade.setToolTipText("mês");
 
         anoValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
-
-        marcaProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marcaProdutoActionPerformed(evt);
-            }
-        });
+        anoValidade.setToolTipText("ano");
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel40.setText("Quantidade:");
 
-        qtdProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                qtdProdutoActionPerformed(evt);
-            }
-        });
-
         descProduto.setColumns(20);
         descProduto.setRows(5);
+        descProduto.setToolTipText("descrição do produto");
         jScrollPane1.setViewportView(descProduto);
 
         cadastrarProduto.setText("Cadastrar");
+        cadastrarProduto.setToolTipText("clique para cadastrar");
 
         cancelProduto.setText("Cancelar");
-        cancelProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelProdutoActionPerformed(evt);
-            }
-        });
+        cancelProduto.setToolTipText("clique para cancelar");
 
         javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
         jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
@@ -883,7 +828,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)))
                 .addGap(48, 48, 48))
             .addGroup(jInternalFrame3Layout.createSequentialGroup()
-                .addGap(231, 231, 231)
+                .addGap(223, 223, 223)
                 .addComponent(cadastrarProduto)
                 .addGap(53, 53, 53)
                 .addComponent(cancelProduto)
@@ -916,11 +861,11 @@ public class GraficoTabbed extends javax.swing.JFrame {
                 .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel39)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarProduto)
                     .addComponent(cancelProduto))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane3.addTab("Cadastrar Produto", jInternalFrame3);
@@ -966,11 +911,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel41.setText("Código:");
 
         codEstoque.setEditable(false);
-        codEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codEstoqueActionPerformed(evt);
-            }
-        });
 
         nomeEstoque.setEditable(false);
 
@@ -981,24 +921,14 @@ public class GraficoTabbed extends javax.swing.JFrame {
         jLabel43.setText("Marca:");
 
         marcaEstoque.setEditable(false);
-        marcaEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marcaEstoqueActionPerformed(evt);
-            }
-        });
 
         qtdEstoque.setEditable(false);
-        qtdEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                qtdEstoqueActionPerformed(evt);
-            }
-        });
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel44.setText("Preço Unitário:");
 
         precoEstoque.setEditable(false);
-        precoEstoque.setText("R$ ");
+        precoEstoque.setToolTipText("R$");
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel45.setText("Quantidade:");
@@ -1009,11 +939,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
         saveEstoque.setText("Salvar");
 
         cancelarEstoque.setText("Cancelar");
-        cancelarEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarEstoqueActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
         jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
@@ -1038,7 +963,7 @@ public class GraficoTabbed extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(jLabel42)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                .addComponent(nomeEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel43)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1081,11 +1006,11 @@ public class GraficoTabbed extends javax.swing.JFrame {
                     .addComponent(precoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel46)
                     .addComponent(saidaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveEstoque)
                     .addComponent(cancelarEstoque))
-                .addGap(18, 18, 18))
+                .addGap(22, 22, 22))
         );
 
         jTabbedPane3.addTab("Controle de Estoque", jInternalFrame4);
@@ -1112,86 +1037,68 @@ public class GraficoTabbed extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cidFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidFuncionarioActionPerformed
+    private void cadastrarFuncionario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionario
+        
+        cadastrarFuncionario.addActionListener(new ActionListener() { 
+  
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //To change body of generated methods, choose Tools | Templates.
+                	String codigoFun = codFuncionario.getText();
+      		        String cargoFunc = cargoFuncionario.getText();
+      		        //double salarioFunc = Double.parseDouble(salFuncionario.getText());
+      		        String salarioFunc = salFuncionario.getText();
+      		        String nomeFunc = nomeFuncionario.getText();
+      		        String sexoFunc= (String) sexoFuncionario.getSelectedItem();
+      		        String estadoCivilFunc = (String) civilFuncionario.getSelectedItem();
+      		        String nascFunc = nascFuncionario.getText();
+      		        String cpfFunc = cpfFuncionario.getText();
+      		        String rgFunc = rgFuncionario.getText();
+      		        String rgUfFunc = (String) rgufFuncionario.getSelectedItem();
+      		        String ruaFunc = endFuncionario.getText();
+      		        String numFunc = numFuncionario.getText();
+      		        String complementoFunc = compFuncionario.getText();
+      		        String cidadeFunc = cidFuncionario.getText();
+      		        String estadoFunc = (String) estadoFuncionario.getSelectedItem();
+      		        String bairroFunc = bairroFuncionario.getText();
+      		        String cepFunc = cepFuncionario.getText();
+      		        String telefoneFunc = telFuncionario.getText();
+      		        String emailFunc = emailFuncionario.getText();
+      		        ArrayList<Funcionarios> arrayFunc = new ArrayList<Funcionarios>();
+      		        ArrayList<String> dadosFuncionario = new ArrayList<String>();
+      		        dadosFuncionario.add(ruaFunc);
+      		        dadosFuncionario.add(bairroFunc);
+      		        dadosFuncionario.add(complementoFunc);
+      		        dadosFuncionario.add(cidadeFunc);
+      		        dadosFuncionario.add(estadoFunc);
+      		        dadosFuncionario.add(numFunc);
+      		        dadosFuncionario.add(codigoFun);
+      		        dadosFuncionario.add(cargoFunc);
+      		        dadosFuncionario.add(salarioFunc);
+      		        dadosFuncionario.add(rgFunc);
+      		        dadosFuncionario.add(cpfFunc);
+      		        dadosFuncionario.add(telefoneFunc);
+      		        dadosFuncionario.add(sexoFunc);
+      		        dadosFuncionario.add(estadoCivilFunc);
+      		        dadosFuncionario.add(nascFunc);
+      		        dadosFuncionario.add(emailFunc);
+      		        listaFuncionarios.add((E) dadosFuncionario);
+      		        //System.out.println(listaFuncionarios);
+      		        CriaArquivo dadosTodosFuncionarios = new CriaArquivo();
+      		        dadosTodosFuncionarios.gravarArquivo(listaFuncionarios, "teste");
+      		        System.out.println(dadosTodosFuncionarios.lerArquivo("teste"));
+      		        dadosTodosFuncionarios.criaObjetosFunc("teste");
+      			    //Endereco enderecoFunc = new Endereco(ruaFunc, bairroFunc, complementoFunc, cidadeFunc, estadoFunc, numFunc); 
+      			    //Funcionarios Func = new Funcionarios(codigoFun, cargoFunc, salarioFunc, rgFunc, cpfFunc, enderecoFunc, 
+      			    	//	telefoneFunc, sexoFunc, estadoCivilFunc, nascFunc,emailFunc 		);
+  
+      		        //arrayFunc.add(Func);
+      			    //System.out.println(arrayFunc);
+            
+            }
+      			});    }//GEN-LAST:event_cadastrarFuncionario
 
-    private void nomeFuncionariojLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeFuncionariojLabel2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFuncionariojLabel2KeyPressed
-
-    private void nomeFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFuncionarioActionPerformed
-
-    private void nomeFuncionariojLabel2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeFuncionariojLabel2FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFuncionariojLabel2FocusGained
-
-    private void codFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codFuncionarioActionPerformed
-
-    }//GEN-LAST:event_codFuncionarioActionPerformed
-
-    private void cidadeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidadeFornecedorActionPerformed
-
-    private void nomeFornecedorjLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeFornecedorjLabel2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFornecedorjLabel2KeyPressed
-
-    private void nomeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFornecedorActionPerformed
-
-    private void nomeFornecedorjLabel2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeFornecedorjLabel2FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFornecedorjLabel2FocusGained
-
-    private void cnpjFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnpjFornecedorActionPerformed
-
-    private void cancelarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFornecedorActionPerformed
-        limparDados(jInternalFrame2);
-    }//GEN-LAST:event_cancelarFornecedorActionPerformed
-
-    private void codProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codProdutoActionPerformed
-
-    private void marcaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_marcaProdutoActionPerformed
-
-    private void qtdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qtdProdutoActionPerformed
-
-    private void cancelProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelProdutoActionPerformed
-
-    private void codEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codEstoqueActionPerformed
-
-    private void marcaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_marcaEstoqueActionPerformed
-
-    private void qtdEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qtdEstoqueActionPerformed
-
-    private void cancelarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarEstoqueActionPerformed
-
-    private void atualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_atualizarFuncionarioActionPerformed
-
+   
     public void limparDados(JInternalFrame Frame) { 
         JComboBox box = new JComboBox();
         //box.removeAllItems();
@@ -1238,8 +1145,6 @@ public class GraficoTabbed extends javax.swing.JFrame {
                 new GraficoTabbed().setVisible(true);
             }
         });
-        
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1366,30 +1271,5 @@ public class GraficoTabbed extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField telFornecedor;
     private javax.swing.JFormattedTextField telFuncionario;
     // End of variables declaration//GEN-END:variables
-    
-    
-    String codigoFun = codFuncionario.getText();
-    String cargoFunc = cargoFuncionario.getText();
-    double salarioFunc = Double.parseDouble(salFuncionario.getText());
-    String nomeFunc = nomeFuncionario.getText();
-    String sexoFunc= (String) sexoFuncionario.getSelectedItem();
-    String estadoCivilFunc = (String) civilFuncionario.getSelectedItem();
-    String nascFunc = nascFuncionario.getText();
-    String cpfFunc = cpfFuncionario.getText();
-    String rgFunc = rgFuncionario.getText();
-    String rgUfFunc = (String) rgufFuncionario.getSelectedItem();
-    String ruaFunc = endFuncionario.getText();
-    String numFunc = numFuncionario.getText();
-    String complementoFunc = compFuncionario.getText();
-    String cidadeFunc = cidFuncionario.getText();
-    String estadoFunc = (String) estadoFuncionario.getSelectedItem();
-    String bairroFunc = bairroFuncionario.getText();
-    String cepFunc = cepFuncionario.getText();
-    String telefoneFunc = telFuncionario.getText();
-    String emailFunc = emailFuncionario.getText();
-
-    
-    Endereco enderecoFunc = new Endereco(ruaFunc, bairroFunc, complementoFunc, cidadeFunc, estadoFunc, numFunc); 
-    Funcionarios Func = new Funcionarios(codigoFun, cargoFunc, salarioFunc, rgFunc, cpfFunc, enderecoFunc, 
-    		telefoneFunc, sexoFunc, estadoCivilFunc, nascFunc,emailFunc 		);
+    ArrayList<E> listaFuncionarios = new ArrayList<E>();
 }
