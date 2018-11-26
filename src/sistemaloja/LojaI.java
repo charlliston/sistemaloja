@@ -7,8 +7,6 @@ package sistemaloja;
 
 
 public interface LojaI {
-    
-    void comprar();
-    void vender();
+
     void emitirNF();
 }

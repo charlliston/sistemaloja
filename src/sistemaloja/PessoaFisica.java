@@ -2,20 +2,16 @@ package sistemaloja;
 
 import java.util.Date;
 
-public class PessoaFisica implements LojaI {
+public abstract class PessoaFisica implements LojaI {
 
-    private String rg;
-    private String cpf;
-    private Endereco endereco;
-    private String telefone;
-    private String sexo;
-    private String estadoCivil;
-    private Date dataDeNascimento;
+     String rg;
+     String cpf;
+     Endereco endereco;
+     String telefone;
+     String sexo;
+     String estadoCivil;
+     String dataDeNascimento;
 
-
-    public PessoaFisica() {
-
-    }
 
     //metodos de acesso as variáveis acima
     public void setRG(String rg) {
@@ -99,23 +95,14 @@ public class PessoaFisica implements LojaI {
         return (this.estadoCivil);
     }
 
-    public void setDataDeNascimento(Date dataDeNascimento) {
+    public void setDataDeNascimento(String dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public Date getDataDeNascimento() {
+    public String getDataDeNascimento() {
         return (this.dataDeNascimento);
     }
-
-    @Override
-    public void comprar() {
-        
-    }
     
-    @Override
-    public void vender() {
-        
-    }
 
     @Override
     public void emitirNF() {
