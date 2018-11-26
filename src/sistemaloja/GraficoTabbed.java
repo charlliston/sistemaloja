@@ -12,11 +12,13 @@ import static java.lang.Math.E;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
 
 public class GraficoTabbed<E> extends javax.swing.JFrame {
+
 
     /**
      * Creates new form GraficoTabbed
@@ -24,7 +26,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     public GraficoTabbed() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -158,6 +160,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         jTabbedPane2.setToolTipText("");
 
+
         jInternalFrame1.setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -165,6 +168,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nome:");
+
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Cargo:");
@@ -174,15 +178,18 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         salFuncionario.setToolTipText("R$");
 
+
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Estado Civil:");
 
         civilFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro(a)", "Casado(a)" }));
 
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Sexo:");
 
         sexoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
+
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Data de Nascimento:");
@@ -191,21 +198,25 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         nascFuncionario.setToolTipText("DD/MM/AAAA");
         nascFuncionario.setActionCommand("<Não Definido>");
 
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("CPF:");
 
         cpfFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cpfFuncionario.setToolTipText("XXX.XXX.XXX-XX");
 
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("RG:");
 
         rgFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("UF/RG:");
 
         rgufFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("Endereço:");
@@ -223,6 +234,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel14.setText("UF:");
 
         estadoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel11.setText("Bairro:");
@@ -247,6 +259,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         cancelFuncionario.setText("Cancelar");
         cancelFuncionario.setToolTipText("clique para cancelar");
+
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setText("E-mail:");
@@ -286,6 +299,8 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rgufFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+
+
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
@@ -312,6 +327,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cepFuncionario))
+
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
@@ -331,6 +347,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(sexoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
@@ -347,6 +364,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(cancelFuncionario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,6 +389,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(civilFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(sexoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -411,6 +430,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(cadastrarFuncionario)
                     .addComponent(cancelFuncionario))
                 .addGap(18, 18, 18))
+
         );
 
         jTabbedPane1.addTab("Cadastro de Funcionários", jInternalFrame1);
@@ -422,11 +442,13 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         cnpjFornecedor.setToolTipText("XX.XXX.XXX/0001-ZZ");
 
+
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel21.setText("Empresa:");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel23.setText("Nome:");
+
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel25.setText("Categoria de Produto Vendido:");
@@ -451,6 +473,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         estadoFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
+
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel35.setText("Bairro:");
 
@@ -473,6 +496,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         prazoFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "30+" }));
 
+
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
         jInternalFrame2Layout.setHorizontalGroup(
@@ -492,6 +516,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(compFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jInternalFrame2Layout.createSequentialGroup()
@@ -526,11 +551,13 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(catFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                         .addGap(3, 3, 3))
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prazoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addComponent(jLabel20)
@@ -547,6 +574,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(cancelarFornecedor)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,6 +624,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(cadastrarFornecedor)
                     .addComponent(cancelarFornecedor))
                 .addGap(17, 17, 17))
+
         );
 
         jTabbedPane1.addTab("Cadastro de Fornecedores", jInternalFrame2);
@@ -1017,6 +1046,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Estoque", jTabbedPane3);
 
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1025,6 +1055,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
                 .addContainerGap())
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1099,6 +1130,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
       			});    }//GEN-LAST:event_cadastrarFuncionario
 
    
+
     public void limparDados(JInternalFrame Frame) { 
         JComboBox box = new JComboBox();
         //box.removeAllItems();
@@ -1191,6 +1223,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrame4;
     private javax.swing.JInternalFrame jInternalFrame5;
     private javax.swing.JInternalFrame jInternalFrame6;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1215,6 +1248,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1232,6 +1266,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1272,4 +1307,5 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField telFuncionario;
     // End of variables declaration//GEN-END:variables
     ArrayList<E> listaFuncionarios = new ArrayList<E>();
+
 }

@@ -46,6 +46,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
 
+
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
@@ -89,6 +90,7 @@
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="compFuncionario" min="-2" pref="118" max="-2" attributes="0"/>
+
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -106,6 +108,7 @@
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="rgufFuncionario" min="-2" max="-2" attributes="0"/>
+
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -116,7 +119,7 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="emailFuncionario" max="32767" attributes="0"/>
+                                          <Component id="emailFuncionario" max="32767" attribu
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
@@ -130,12 +133,14 @@
                                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="bairroFuncionario" min="-2" pref="107" max="-2" attributes="0"/>
+
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cepFuncionario" max="32767" attributes="0"/>
+
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -147,6 +152,7 @@
                                           <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="cargoFuncionario" max="32767" attributes="0"/>
+
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -159,16 +165,19 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
+
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="civilFuncionario" min="-2" max="-2" attributes="0"/>
+
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="salFuncionario" min="-2" pref="94" max="-2" attributes="0"/>
+
                                       </Group>
                                   </Group>
                               </Group>
@@ -195,12 +204,14 @@
                                       <Component id="codFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cargoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="salFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -212,6 +223,7 @@
                               <Component id="civilFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="sexoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -224,6 +236,7 @@
                               <Component id="rgFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rgufFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -233,6 +246,7 @@
                               <Component id="numFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="compFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -244,6 +258,7 @@
                               <Component id="bairroFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cepFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -258,6 +273,7 @@
                               <Component id="cancelFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -272,6 +288,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="codFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -282,6 +299,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomeFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
@@ -292,6 +310,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cargoFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
@@ -304,6 +323,7 @@
                 <Component class="javax.swing.JTextField" name="salFuncionario">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="R$"/>
+
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
@@ -315,6 +335,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="civilFuncionario">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -336,6 +357,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="sexoFuncionario">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -361,6 +383,7 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="toolTipText" type="java.lang.String" value="DD/MM/AAAA"/>
                     <Property name="actionCommand" type="java.lang.String" value="&lt;N&#xe3;o Definido&gt;"/>
+
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
@@ -375,6 +398,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="toolTipText" type="java.lang.String" value="XXX.XXX.XXX-XX"/>
+
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
@@ -386,6 +410,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="rgFuncionario">
+
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                   </Properties>
@@ -399,6 +424,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="rgufFuncionario">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="27">
@@ -445,6 +471,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="endFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -455,6 +482,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="numFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
@@ -465,6 +493,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="compFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
@@ -475,6 +504,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cidFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -485,6 +515,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="estadoFuncionario">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="27">
@@ -531,6 +562,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="bairroFuncionario">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
@@ -544,6 +576,7 @@
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="XXXXX-XXX"/>
                   </Properties>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
@@ -571,6 +604,7 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                     <Property name="toolTipText" type="java.lang.String" value="clique para cancelar"/>
+
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
@@ -582,6 +616,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="emailFuncionario">
+
                 </Component>
               </SubComponents>
             </Container>
@@ -615,6 +650,7 @@
                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="compFornecedor" min="-2" pref="118" max="-2" attributes="0"/>
+
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -626,6 +662,7 @@
                                           <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="emailFornecedor" max="32767" attributes="0"/>
+
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
@@ -639,12 +676,14 @@
                                           <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="bairroFornecedor" min="-2" pref="107" max="-2" attributes="0"/>
+
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cepFornecedor" max="32767" attributes="0"/>
+
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
@@ -654,12 +693,14 @@
                                   <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="catFornecedor" min="-2" max="-2" attributes="0"/>
+
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="prazoFornecedor" min="-2" max="-2" attributes="0"/>
+
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -670,6 +711,7 @@
                                   <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="empresaFornecedor" min="-2" pref="279" max="-2" attributes="0"/>
+
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
@@ -681,6 +723,7 @@
                           <Component id="cancelarFornecedor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
+
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -699,11 +742,13 @@
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="catFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="prazoFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -713,6 +758,7 @@
                               <Component id="numFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="compFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -724,6 +770,7 @@
                               <Component id="bairroFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cepFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -738,6 +785,7 @@
                               <Component id="cancelarFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -755,6 +803,7 @@
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="XX.XXX.XXX/0001-ZZ"/>
                   </Properties>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel21">
                   <Properties>
@@ -765,6 +814,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="empresaFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel23">
                   <Properties>
@@ -775,6 +825,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomeFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
@@ -801,6 +852,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="compFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel31">
                   <Properties>
@@ -811,6 +863,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="numFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel32">
                   <Properties>
@@ -821,6 +874,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="endFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel33">
                   <Properties>
@@ -831,6 +885,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cidadeFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
@@ -841,6 +896,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="estadoFornecedor">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="27">
@@ -887,6 +943,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="bairroFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
@@ -899,6 +956,7 @@
                 <Component class="javax.swing.JTextField" name="cepFornecedor">
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="emailFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel37">
                   <Properties>
@@ -909,6 +967,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="telFornecedor">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
@@ -931,6 +990,7 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="catFornecedor">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -946,6 +1006,7 @@
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="prazoFornecedor">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="31">
@@ -1770,6 +1831,7 @@
                 </Component>
               </SubComponents>
             </Container>
+
           </SubComponents>
         </Container>
       </SubComponents>
