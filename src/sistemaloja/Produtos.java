@@ -9,6 +9,14 @@ public class Produtos {
     private double valor;
     private Date dataValidade;   
     
+    public Produtos(String nome, String codProd, String descricao, String marca, double valor, Date dataValidade) {
+    	this.nome = nome;
+    	this.codProd = codProd;
+    	this.descricao = descricao;
+    	this.marca = marca;
+    	this.valor = valor;
+    	this.dataValidade = dataValidade;
+    }
     
     public String getNome() {
         return nome;
