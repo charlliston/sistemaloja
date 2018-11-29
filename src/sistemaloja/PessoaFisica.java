@@ -11,6 +11,7 @@ public abstract class PessoaFisica implements LojaI {
      String sexo;
      String estadoCivil;
      String dataDeNascimento;
+     String nome;
 
 
     //metodos de acesso as variáveis acima
@@ -102,7 +103,9 @@ public abstract class PessoaFisica implements LojaI {
     public String getDataDeNascimento() {
         return (this.dataDeNascimento);
     }
-    
+    public String getNome() {
+        return (this.nome);
+    }
 
     @Override
     public void emitirNF() {

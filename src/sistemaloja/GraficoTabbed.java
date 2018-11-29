@@ -8,17 +8,21 @@ package sistemaloja;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.lang.Math.E;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-
 
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import javafx.beans.value.ObservableValue;
 
 public class GraficoTabbed<E> extends javax.swing.JFrame {
-
 
     /**
      * Creates new form GraficoTabbed
@@ -26,13 +30,12 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     public GraficoTabbed() {
         initComponents();
         setLocationRelativeTo(null);
-
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jInternalFrame1 = new javax.swing.JInternalFrame();
@@ -158,17 +161,35 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane2.setToolTipText("");
-
-
         jInternalFrame1.setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Código:");
 
+        codFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codFuncionarioActionPerformed(evt);
+            }
+        });
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nome:");
 
+        nomeFuncionario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeFuncionariojLabel2FocusGained(evt);
+            }
+        });
+        nomeFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeFuncionarioActionPerformed(evt);
+            }
+        });
+        nomeFuncionario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nomeFuncionariojLabel2KeyPressed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Cargo:");
@@ -176,47 +197,38 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Salário:");
 
-        salFuncionario.setToolTipText("R$");
-
+       // salFuncionario.setText("R$ ");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Estado Civil:");
 
         civilFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro(a)", "Casado(a)" }));
 
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Sexo:");
 
         sexoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
 
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Data de Nascimento:");
 
         nascFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        nascFuncionario.setToolTipText("DD/MM/AAAA");
-        nascFuncionario.setActionCommand("<Não Definido>");
-
+        nascFuncionario.setText("DD/MM/AAAA");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("CPF:");
 
         cpfFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cpfFuncionario.setToolTipText("XXX.XXX.XXX-XX");
-
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("RG:");
 
         rgFuncionario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("UF/RG:");
 
         rgufFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("Endereço:");
@@ -230,11 +242,16 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("Cidade:");
 
+        cidFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cidFuncionarioActionPerformed(evt);
+            }
+        });
+
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("UF:");
 
         estadoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel11.setText("Bairro:");
@@ -242,24 +259,12 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("CEP:");
 
-        cepFuncionario.setToolTipText("XXXXX-XXX");
-
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("Telefone:");
 
-        telFuncionario.setToolTipText("(DDD) XXXXX-XXXX");
-
         cadastrarFuncionario.setText("Cadastrar");
-        cadastrarFuncionario.setToolTipText("clique para cadastrar");
-        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarFuncionario(evt);
-            }
-        });
 
         cancelFuncionario.setText("Cancelar");
-        cancelFuncionario.setToolTipText("clique para cancelar");
-
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setText("E-mail:");
@@ -299,8 +304,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rgufFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-
-
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
@@ -322,12 +325,16 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(bairroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(bairroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
+                                .addGap(199, 199, 199)
+                                .addComponent(cadastrarFuncionario)
+                                .addGap(48, 48, 48)
+                                .addComponent(cancelFuncionario)))
                         .addGap(13, 13, 13)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cepFuncionario))
-
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
@@ -347,7 +354,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(sexoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
@@ -358,13 +364,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(salFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(48, 48, 48))
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(cadastrarFuncionario)
-                .addGap(48, 48, 48)
-                .addComponent(cancelFuncionario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,7 +388,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(civilFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(sexoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -425,14 +423,15 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(telFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
                     .addComponent(emailFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarFuncionario)
                     .addComponent(cancelFuncionario))
-                .addGap(18, 18, 18))
-
+                .addGap(41, 41, 41))
         );
-
+        
+        
+        
         jTabbedPane1.addTab("Cadastro de Funcionários", jInternalFrame1);
 
         jInternalFrame2.setVisible(true);
@@ -440,8 +439,11 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel20.setText("CNPJ:");
 
-        cnpjFornecedor.setToolTipText("XX.XXX.XXX/0001-ZZ");
-
+        cnpjFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cnpjFornecedorActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel21.setText("Empresa:");
@@ -449,6 +451,21 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel23.setText("Nome:");
 
+        nomeFornecedor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeFornecedorjLabel2FocusGained(evt);
+            }
+        });
+        nomeFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeFornecedorActionPerformed(evt);
+            }
+        });
+        nomeFornecedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nomeFornecedorjLabel2KeyPressed(evt);
+            }
+        });
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel25.setText("Categoria de Produto Vendido:");
@@ -468,11 +485,16 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel33.setText("Cidade:");
 
+        cidadeFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cidadeFornecedorActionPerformed(evt);
+            }
+        });
+
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("UF:");
 
         estadoFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel35.setText("Bairro:");
@@ -487,15 +509,17 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel38.setText("Telefone:");
 
         cadastrarFornecedor.setText("Cadastrar");
-        cadastrarFornecedor.setToolTipText("clique para cadastrar");
 
         cancelarFornecedor.setText("Cancelar");
-        cancelarFornecedor.setToolTipText("clique para cancelar");
+        cancelarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarFornecedorActionPerformed(evt);
+            }
+        });
 
         catFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bebidas", "Enlatados", "Grãos", "Massas" }));
 
         prazoFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "30+" }));
-
 
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
@@ -516,7 +540,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(compFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jInternalFrame2Layout.createSequentialGroup()
@@ -538,7 +561,12 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel35)
                                 .addGap(18, 18, 18)
-                                .addComponent(bairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(bairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
+                                .addGap(199, 199, 199)
+                                .addComponent(cadastrarFornecedor)
+                                .addGap(48, 48, 48)
+                                .addComponent(cancelarFornecedor)))
                         .addGap(13, 13, 13)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -547,17 +575,15 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(nomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(catFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-
                         .addGap(3, 3, 3))
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prazoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jInternalFrame2Layout.createSequentialGroup()
                         .addComponent(jLabel20)
@@ -568,13 +594,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(empresaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48))
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addComponent(cadastrarFornecedor)
-                .addGap(48, 48, 48)
-                .addComponent(cancelarFornecedor)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,43 +638,104 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(telFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37)
                     .addComponent(emailFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarFornecedor)
                     .addComponent(cancelarFornecedor))
-                .addGap(17, 17, 17))
-
+                .addGap(41, 41, 41))
         );
 
         jTabbedPane1.addTab("Cadastro de Fornecedores", jInternalFrame2);
-
+       
         jInternalFrame5.setVisible(true);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Código", "Nome", "Telefone", "Cargo", "Salário"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
+        
+       
+        //cria um modelo para sua tabela
+        jTabbedPane1.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                System.out.println("Tab: " + jTabbedPane1.getSelectedIndex());
+                if (jTabbedPane1.getSelectedIndex() == 3) {
+                	
+	                ArrayList<Object> listaFor = new ArrayList<Object>();
+	 	               CriaArquivo dadosTodosFornecedores = new CriaArquivo();
+	 	               listaFor = dadosTodosFornecedores.lerArquivo("FornecedoresCadastradoss");
+	 	               String [][] matrizFor = new String[listaFor.size()][6];
+	 	              for (int i=0; i < listaFor.size(); i++) {  
+	 					Fornecedores fornecedor = (Fornecedores) listaFor.get(i);
+	 				      //aqui vc colaca os valores que vc quer capturar da lista de contatos
+	 				      matrizFor[i][0] = fornecedor.getCNPJ();
+	 				      matrizFor[i][1] = fornecedor.getEmpresa();
+	 				      matrizFor[i][2] = fornecedor.getNome();
+	 				      matrizFor[i][3] = fornecedor.getCategoria();
+	 				      matrizFor[i][4] = fornecedor.getEmail();
+	 				      matrizFor[i][5] = fornecedor.getTelefone();
+	 				      
+	 				}
+	 	              
+	                	  jTable3.setModel(new javax.swing.table.DefaultTableModel(
+	                	             matrizFor,
+	                	            
+	                	            new String [] {
+	                	                "CNPJ", "Empresa", "Nome", "Categoria", "E-mail", "Telefone"
+	                	            }
+	                	        ) {
+	                	            Class[] types = new Class [] {
+	                	                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+	                	            };
+	                	            boolean[] canEdit = new boolean [] {
+	                	                false, false, false, false, true, true
+	                	            };
+	
+	                	            public Class getColumnClass(int columnIndex) {
+	                	                return types [columnIndex];
+	                	            }
+	
+	                	            public boolean isCellEditable(int rowIndex, int columnIndex) {
+	                	                return canEdit [columnIndex];
+	                	            }
+	                	        });
+	                	        
+	                }
+                else if (jTabbedPane1.getSelectedIndex() == 2) {
+				        
+	                ArrayList<Object> listaFunc = new ArrayList<Object>();
+	               CriaArquivo dadosTodosFuncionarios = new CriaArquivo();
+	               listaFunc = dadosTodosFuncionarios.lerArquivo("FuncionariosCadastrados");
+	               String [][] matrizFunc = new String[listaFunc.size()][4];
+	              for (int i=0; i < listaFunc.size(); i++) {  
+					Funcionarios func = (Funcionarios) listaFunc.get(i);
+				      //aqui vc colaca os valores que vc quer capturar da lista de contatos
+				      matrizFunc[i][0] = func.getCodigoFun();
+				      matrizFunc[i][1] = func.getNome();
+				      matrizFunc[i][2] = func.getCargo();
+				      matrizFunc[i][3] = String.valueOf(func.getSalario());
+				}
+		        
+		        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+		        		
+		            	
+		           matrizFunc,
+		            new String [] {
+		                "Código", "Nome", "Cargo", "Salário"
+		            }
+		        ) {
+		            Class[] types = new Class [] {
+		                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+		            };
+		            boolean[] canEdit = new boolean [] {
+		                false, false, true, true, true
+		            };
+		
+		            public Class getColumnClass(int columnIndex) {
+		                return types [columnIndex];
+		            }
+		
+		            public boolean isCellEditable(int rowIndex, int columnIndex) {
+		                return canEdit [columnIndex];
+		            }
+		        });
+	            }
+	        }
         });
         jScrollPane3.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
@@ -663,14 +743,17 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(1).setResizable(false);
             jTable2.getColumnModel().getColumn(2).setResizable(false);
             jTable2.getColumnModel().getColumn(3).setResizable(false);
-            jTable2.getColumnModel().getColumn(4).setResizable(false);
+            //jTable2.getColumnModel().getColumn(4).setResizable(false);
         }
 
         atualizarFuncionario.setText("Atualizar");
-        atualizarFuncionario.setToolTipText("clique para atualizar");
+        atualizarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarFuncionarioActionPerformed(evt);
+            }
+        });
 
         excluirFuncionario.setText("Excluir");
-        excluirFuncionario.setToolTipText("clique para excluir");
 
         javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
         jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
@@ -694,37 +777,12 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(excluirFuncionario))
                 .addGap(15, 15, 15))
         );
-
+   
         jTabbedPane1.addTab("Gerenciar Funcionários", jInternalFrame5);
-
+        
         jInternalFrame6.setVisible(true);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "CNPJ", "Empresa", "Nome", "Categoria", "E-mail", "Telefone"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+       
         jScrollPane4.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
             jTable3.getColumnModel().getColumn(0).setResizable(false);
@@ -736,10 +794,8 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         }
 
         atualizarFornecedor.setText("Atualizar");
-        atualizarFornecedor.setToolTipText("clique para atualizar");
 
         excluirFornecedor.setText("Excluir");
-        excluirFornecedor.setToolTipText("clique para excluir");
 
         javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
         jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
@@ -773,13 +829,19 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel22.setText("Código:");
 
+        codProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codProdutoActionPerformed(evt);
+            }
+        });
+
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel24.setText("Nome:");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel28.setText("Preço Unitário:");
 
-        precoProduto.setToolTipText("R$");
+        precoProduto.setText("R$ ");
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel29.setText("Data de Validade:");
@@ -791,27 +853,38 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel39.setText("Descrição:");
 
         diaValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "30", "31" }));
-        diaValidade.setToolTipText("dia");
 
         mesValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-        mesValidade.setToolTipText("mês");
 
         anoValidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
-        anoValidade.setToolTipText("ano");
+
+        marcaProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                marcaProdutoActionPerformed(evt);
+            }
+        });
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel40.setText("Quantidade:");
 
+        qtdProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                qtdProdutoActionPerformed(evt);
+            }
+        });
+
         descProduto.setColumns(20);
         descProduto.setRows(5);
-        descProduto.setToolTipText("descrição do produto");
         jScrollPane1.setViewportView(descProduto);
 
         cadastrarProduto.setText("Cadastrar");
-        cadastrarProduto.setToolTipText("clique para cadastrar");
 
         cancelProduto.setText("Cancelar");
-        cancelProduto.setToolTipText("clique para cancelar");
+        cancelProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
         jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
@@ -857,7 +930,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)))
                 .addGap(48, 48, 48))
             .addGroup(jInternalFrame3Layout.createSequentialGroup()
-                .addGap(223, 223, 223)
+                .addGap(231, 231, 231)
                 .addComponent(cadastrarProduto)
                 .addGap(53, 53, 53)
                 .addComponent(cancelProduto)
@@ -890,11 +963,11 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel39)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGap(76, 76, 76)
                 .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarProduto)
                     .addComponent(cancelProduto))
-                .addContainerGap())
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Cadastrar Produto", jInternalFrame3);
@@ -940,6 +1013,11 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel41.setText("Código:");
 
         codEstoque.setEditable(false);
+        codEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codEstoqueActionPerformed(evt);
+            }
+        });
 
         nomeEstoque.setEditable(false);
 
@@ -950,14 +1028,24 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel43.setText("Marca:");
 
         marcaEstoque.setEditable(false);
+        marcaEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                marcaEstoqueActionPerformed(evt);
+            }
+        });
 
         qtdEstoque.setEditable(false);
+        qtdEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                qtdEstoqueActionPerformed(evt);
+            }
+        });
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel44.setText("Preço Unitário:");
 
         precoEstoque.setEditable(false);
-        precoEstoque.setToolTipText("R$");
+        precoEstoque.setText("R$ ");
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel45.setText("Quantidade:");
@@ -965,9 +1053,20 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel46.setText("Saída:");
 
+        saidaEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saidaEstoqueActionPerformed(evt);
+            }
+        });
+
         saveEstoque.setText("Salvar");
 
         cancelarEstoque.setText("Cancelar");
+        cancelarEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarEstoqueActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
         jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
@@ -992,7 +1091,7 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(jLabel42)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                                .addComponent(nomeEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel43)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1035,17 +1134,16 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                     .addComponent(precoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel46)
                     .addComponent(saidaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveEstoque)
                     .addComponent(cancelarEstoque))
-                .addGap(22, 22, 22))
+                .addGap(18, 18, 18))
         );
 
         jTabbedPane3.addTab("Controle de Estoque", jInternalFrame4);
 
         jTabbedPane2.addTab("Estoque", jTabbedPane3);
-
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1055,7 +1153,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
                 .addContainerGap())
-
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1065,17 +1162,45 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void cadastrarFuncionario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionario
         
+        
+        cadastrarFornecedor.addActionListener(new ActionListener() { 
+        	
+  			@Override
+  			public void actionPerformed(ActionEvent arg0) {
+  				String cnpj = cnpjFornecedor.getText();
+  				String empresa = empresaFornecedor.getText();
+  				String nomeFor = nomeFornecedor.getText();
+  				String categoriaFor = (String) catFornecedor.getSelectedItem();
+  				String prazoFor = (String) prazoFornecedor.getSelectedItem();
+  				String ruaFor = endFornecedor.getText();
+  				String numFor = numFornecedor.getText();
+  				String compFor = compFornecedor.getText();
+  				String cidadeFor = cidadeFornecedor.getText();
+  				String estadoFor = (String) estadoFornecedor.getSelectedItem();
+  				String bairroFor = bairroFornecedor.getText();
+  				String cepFor = cepFornecedor.getText();
+  				String telefoneFor = telFornecedor.getText();
+  				String emailFor = emailFornecedor.getText();
+  				Endereco enderecoFor = new Endereco(ruaFor, bairroFor, compFor, cidadeFor, estadoFor, numFor, cepFor);
+  				Fornecedores fornecedor = new Fornecedores ( cnpj, prazoFor, nomeFor, empresa, categoriaFor, enderecoFor, 
+  			    		telefoneFor, emailFor);
+  		        try {
+					CriaArquivo.gravarArquivo(fornecedor, "FornecedoresCadastradoss");
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+  		           			    
+  			}
+  			});
+    
         cadastrarFuncionario.addActionListener(new ActionListener() { 
-  
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //To change body of generated methods, choose Tools | Templates.
-                	String codigoFun = codFuncionario.getText();
+        	
+      			@Override
+      			public void actionPerformed(ActionEvent arg0) {
+      				
+      				String codigoFun = codFuncionario.getText();
       		        String cargoFunc = cargoFuncionario.getText();
       		        //double salarioFunc = Double.parseDouble(salFuncionario.getText());
       		        String salarioFunc = salFuncionario.getText();
@@ -1095,41 +1220,105 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
       		        String cepFunc = cepFuncionario.getText();
       		        String telefoneFunc = telFuncionario.getText();
       		        String emailFunc = emailFuncionario.getText();
-      		        ArrayList<Funcionarios> arrayFunc = new ArrayList<Funcionarios>();
-      		        ArrayList<String> dadosFuncionario = new ArrayList<String>();
-      		        dadosFuncionario.add(ruaFunc);
-      		        dadosFuncionario.add(bairroFunc);
-      		        dadosFuncionario.add(complementoFunc);
-      		        dadosFuncionario.add(cidadeFunc);
-      		        dadosFuncionario.add(estadoFunc);
-      		        dadosFuncionario.add(numFunc);
-      		        dadosFuncionario.add(codigoFun);
-      		        dadosFuncionario.add(cargoFunc);
-      		        dadosFuncionario.add(salarioFunc);
-      		        dadosFuncionario.add(rgFunc);
-      		        dadosFuncionario.add(cpfFunc);
-      		        dadosFuncionario.add(telefoneFunc);
-      		        dadosFuncionario.add(sexoFunc);
-      		        dadosFuncionario.add(estadoCivilFunc);
-      		        dadosFuncionario.add(nascFunc);
-      		        dadosFuncionario.add(emailFunc);
-      		        listaFuncionarios.add((E) dadosFuncionario);
-      		        //System.out.println(listaFuncionarios);
-      		        CriaArquivo dadosTodosFuncionarios = new CriaArquivo();
-      		        dadosTodosFuncionarios.gravarArquivo(listaFuncionarios, "teste");
-      		        System.out.println(dadosTodosFuncionarios.lerArquivo("teste"));
-      		        dadosTodosFuncionarios.criaObjetosFunc("teste");
-      			    //Endereco enderecoFunc = new Endereco(ruaFunc, bairroFunc, complementoFunc, cidadeFunc, estadoFunc, numFunc); 
-      			    //Funcionarios Func = new Funcionarios(codigoFun, cargoFunc, salarioFunc, rgFunc, cpfFunc, enderecoFunc, 
-      			    	//	telefoneFunc, sexoFunc, estadoCivilFunc, nascFunc,emailFunc 		);
-  
-      		        //arrayFunc.add(Func);
-      			    //System.out.println(arrayFunc);
-            
-            }
-      			});    }//GEN-LAST:event_cadastrarFuncionario
+      		        Endereco enderecoFunc = new Endereco(ruaFunc, bairroFunc, complementoFunc, cidadeFunc, estadoFunc, numFunc, cepFunc); 
+    			    Funcionarios funcionario = new Funcionarios(codigoFun, cargoFunc, Double.parseDouble(salarioFunc), rgFunc, cpfFunc, enderecoFunc, 
+    			    	telefoneFunc, sexoFunc, estadoCivilFunc, nascFunc,emailFunc, nomeFunc		);
 
-   
+      		        try {
+						CriaArquivo.gravarArquivo(funcionario, "FuncionariosCadastrados");
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+      		           			    
+      			}
+      			});
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void cidFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cidFuncionarioActionPerformed
+
+    private void nomeFuncionariojLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeFuncionariojLabel2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFuncionariojLabel2KeyPressed
+
+    private void nomeFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFuncionarioActionPerformed
+
+    private void nomeFuncionariojLabel2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeFuncionariojLabel2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFuncionariojLabel2FocusGained
+
+    private void codFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codFuncionarioActionPerformed
+
+    }//GEN-LAST:event_codFuncionarioActionPerformed
+
+    private void cidadeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cidadeFornecedorActionPerformed
+
+    private void nomeFornecedorjLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeFornecedorjLabel2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFornecedorjLabel2KeyPressed
+
+    private void nomeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFornecedorActionPerformed
+
+    private void nomeFornecedorjLabel2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeFornecedorjLabel2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeFornecedorjLabel2FocusGained
+
+    private void cnpjFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnpjFornecedorActionPerformed
+
+    private void cancelarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFornecedorActionPerformed
+        limparDados(jInternalFrame2);
+    }//GEN-LAST:event_cancelarFornecedorActionPerformed
+
+    private void codProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codProdutoActionPerformed
+
+    private void marcaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_marcaProdutoActionPerformed
+
+    private void qtdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qtdProdutoActionPerformed
+
+    private void cancelProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelProdutoActionPerformed
+
+    private void codEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codEstoqueActionPerformed
+
+    private void marcaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_marcaEstoqueActionPerformed
+
+    private void qtdEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qtdEstoqueActionPerformed
+
+    private void saidaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saidaEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saidaEstoqueActionPerformed
+
+    private void cancelarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarEstoqueActionPerformed
+
+    private void atualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_atualizarFuncionarioActionPerformed
 
     public void limparDados(JInternalFrame Frame) { 
         JComboBox box = new JComboBox();
@@ -1177,6 +1366,8 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
                 new GraficoTabbed().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1223,7 +1414,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrame4;
     private javax.swing.JInternalFrame jInternalFrame5;
     private javax.swing.JInternalFrame jInternalFrame6;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1248,7 +1438,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1266,7 +1455,6 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1305,7 +1493,10 @@ public class GraficoTabbed<E> extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> sexoFuncionario;
     private javax.swing.JFormattedTextField telFornecedor;
     private javax.swing.JFormattedTextField telFuncionario;
-    // End of variables declaration//GEN-END:variables
+    //ArrayList<String> dadosFuncionario = new ArrayList<String>();
     ArrayList<E> listaFuncionarios = new ArrayList<E>();
-
+    // End of variables declaration//GEN-END:variables
+    
+ 
+    
 }

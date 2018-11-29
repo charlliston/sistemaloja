@@ -1,42 +1,55 @@
 package sistemaloja;
 
-    
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+  import java.io.IOException;
+  import java.util.ArrayList;
+  import java.io.FileInputStream;
+  import java.io.FileOutputStream;
+  import java.io.ObjectInputStream;
+  import java.io.ObjectOutputStream;
 import java.io.Serializable;
-
-
+    
   public class CriaArquivo {
+	  
+	  
     
-    // serializaÃ§Ã£o: gravando o textos no arquivo
-    public static <E> void gravarArquivo(ArrayList<E> texto, String nomeArquivo) {
+    // serialização: gravando o textos no arquivo
+    public static void gravarArquivo(Object objeto, String nomeArquivo) throws ClassNotFoundException {
       File arquivo = new File(nomeArquivo);
+     
+      ArrayList<Object> Historico = new ArrayList<Object>();
+     
       try {
-        arquivo.delete();
-        arquivo.createNewFile();
-    
-        ObjectOutputStream objOutput = new ObjectOutputStream(new FileOutputStream(arquivo));
-        objOutput.writeObject(texto);
+    	 if (arquivo.exists()) {
+              ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(arquivo));
+              Historico = (ArrayList<Object>)objInput.readObject();
+              System.out.println(Historico);
+           }
+    	 else {
+    		 arquivo.delete();
+    		 arquivo.createNewFile();
+    	 }
+    	Historico.add(objeto);
+    	System.out.println(Historico);
+    	ObjectOutputStream objOutput = new ObjectOutputStream(new FileOutputStream(arquivo));
+        objOutput.writeObject(Historico);
         objOutput.close();
+      }
     
-      } catch(IOException erro) {
+        catch(IOException erro) {
           System.out.printf("Erro: %s", erro.getMessage());
       }
+
     }
     
-    // desserializaÃ§Ã£o: recuperando os textos gravados no arquivo
-    public static <E> ArrayList<E> lerArquivo(String nomeArquivo) {
-      ArrayList<E> texto = new ArrayList();
+    // desserialização: recuperando os textos gravados no arquivo
+    public static   ArrayList<Object> lerArquivo(String nomeArquivo) {
+        ArrayList<Object> lista = new ArrayList<Object>();
       try {
         File arquivo = new File(nomeArquivo);
         if (arquivo.exists()) {
            ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(arquivo));
-           texto = (ArrayList<E>)objInput.readObject();
+           lista = (ArrayList<Object>) objInput.readObject();
            objInput.close();
         }
       } catch(IOException erro1) {
@@ -45,22 +58,12 @@ import java.io.Serializable;
           System.out.printf("Erro: %s", erro2.getMessage());
       }
     
-      return(texto);
+      return(lista);
     }
     
-    public static <E> void criaObjetosFunc(String nomearquivo) {
-    	ArrayList<E> arquivo = new ArrayList<E>();
-    	arquivo = lerArquivo(nomearquivo);
-    	ArrayList<String> infoArquivo = new ArrayList<String>();
-    	ArrayList<Funcionarios> todosFunc = new ArrayList<Funcionarios>();
-    	for (int i=0; i < arquivo.size(); i++) {
-    		infoArquivo = (ArrayList<String>) arquivo.get(i);
-    		Endereco enderecoFunc = new Endereco(infoArquivo.get(0), infoArquivo.get(1), infoArquivo.get(2), infoArquivo.get(3), infoArquivo.get(4), infoArquivo.get(5)); 
-    		Funcionarios Func = new Funcionarios(infoArquivo.get(6), infoArquivo.get(7), Double.parseDouble(infoArquivo.get(8)), infoArquivo.get(9), infoArquivo.get(10), enderecoFunc, 
-    			infoArquivo.get(11),infoArquivo.get(12), infoArquivo.get(13), infoArquivo.get(14), infoArquivo.get(15));
-    		todosFunc.add(Func);
-    	}
-    	
-    }
+    
+
+
+    
     
   }

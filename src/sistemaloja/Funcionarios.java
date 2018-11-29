@@ -1,19 +1,24 @@
 package sistemaloja;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Funcionarios extends PessoaFisica {
-    String codigoFunc;
+public class Funcionarios extends PessoaFisica implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String codigoFunc;
     String cargo;
     double salario;
     String dataAdm;
     String email;
     
     public Funcionarios ( String codigoFun, String cargo, double salario, String rg, String cpf, Endereco endereco, 
-    		String telefone, String sexo, String estadoCivil, String dataDeNascimento, String email) {
+    		String telefone, String sexo, String estadoCivil, String dataDeNascimento, String email, String nome ) {
     	this.codigoFunc = codigoFun;
     	this.cargo = cargo;
     	this.salario = salario;
+    	this.nome = nome;
     	this.rg = rg;
     	this.cpf = cpf;
     	this.endereco = endereco;
@@ -36,12 +41,16 @@ public class Funcionarios extends PessoaFisica {
     	return salario;
     }
     
+   
     
     public String getDataAdm() {
     	return dataAdm;
     }
+    public String getCargo() {
+    	return cargo;
+    }
     
-    
+ 
     
     public void cadastrarProd() {
         

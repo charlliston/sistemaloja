@@ -1,21 +1,28 @@
 package sistemaloja;
 
-public class Endereco {
+import java.io.Serializable;
 
-    private String rua;
+public class Endereco implements Serializable {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String rua;
     private String bairro;
     private String complemento;
     private String cep;
     private String cidade;
     private String estado;
     private String numero;
-    public Endereco (String rua, String bairro, String complemento, String cidade, String estado, String numero) {
+    public Endereco (String rua, String bairro, String complemento, String cidade, String estado, String numero, String cep) {
     	this.rua = rua;
     	this.bairro = bairro;
     	this.complemento = complemento;
     	this.cidade = cidade;
     	this.estado = estado;
     	this.numero = numero;
+    	this.cep = cep;
     }
     public void setRua(String rua) {
         this.rua = rua;
